@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html ng-app="assessmentApp">
+  <head>
+    <meta charset="utf-8">
+    <title>Angular-Assessment</title>
+    <script src = "angular.min.js"></script>
+    <script src = "client.js"></script>
+  </head>
+  <body ng-controller="MainController as parent">
+
+    <h1>Angular Assessment</h1>
+
+    <input type="text" ng-model="parent.message" />
+    <button ng-click="parent.showMessage()">Send Message</button>
+
+    <div ng-show="parent.showingMessage">
+      <h2>Message is:</h2>
+        {{parent.shownMessage}}
+    </div>
+
+    <div ng-show="parent.showingPrevious">
+      <h2>Previous messages are:</h2>
+      <div ng-repeat="message in parent.messageList">
+        {{message}}
+      </div>
+    </div>
+
+  </body>
+</html>
